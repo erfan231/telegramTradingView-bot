@@ -14,11 +14,12 @@ def index():
 @app.route("/tradingview", methods=["GET", "POST"])
 def tradingview():
     json_data = request.json
-    symbol = str(json_data["symbol"])
+    """symbol = str(json_data["symbol"])
     price = str(json_data["price"])
     message = symbol + ": " + price
-    telegram_bot(message)
-    return message
+    """
+    telegram_bot(str(json_data))
+    return json_data
 
 
 
