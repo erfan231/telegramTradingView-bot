@@ -13,7 +13,7 @@ def index():
 
 @app.route("/tradingview", methods=["GET", "POST"])
 def tradingview():
-    json_data = request.json()
+    json_data = request.json
     symbol = str(json_data["symbol"])
     price = str(json_data["price"])
     message = symbol + ": " + price
@@ -24,3 +24,9 @@ def tradingview():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",debug=True)
+
+
+{
+    "symbol": "{{ticker}}",
+    "price": "{{price}}"
+}
